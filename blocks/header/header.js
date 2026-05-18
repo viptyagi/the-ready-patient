@@ -152,16 +152,17 @@ export default async function decorate(block) {
       if (bc) bc.className = '';
     });
 
-    // add search button
-    const searchBtn = document.createElement('button');
-    searchBtn.className = 'nav-search-btn';
-    searchBtn.setAttribute('aria-label', 'Search');
-    searchBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
-    searchBtn.addEventListener('click', () => {
-      window.location.href = '/search.html';
-    });
-    navTools.append(searchBtn);
   }
+
+  // add search button directly to nav (not inside tools) so it stays on main row
+  const searchBtn = document.createElement('button');
+  searchBtn.className = 'nav-search-btn';
+  searchBtn.setAttribute('aria-label', 'Search');
+  searchBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+  searchBtn.addEventListener('click', () => {
+    window.location.href = '/search.html';
+  });
+  nav.append(searchBtn);
 
   // hamburger for mobile - prepended so it's on the LEFT
   const hamburger = document.createElement('div');
