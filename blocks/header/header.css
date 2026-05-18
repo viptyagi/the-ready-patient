@@ -334,30 +334,34 @@ header nav .nav-sections ul > li > ul > li a:hover {
     align-items: center;
   }
 
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
+  /* reset mobile accordion styles for desktop */
+  header nav .nav-sections ul > li {
+    font-weight: 600;
+    padding: 0;
+    border-bottom: none;
   }
 
-  header nav .nav-sections .nav-drop::after {
+  header nav .nav-sections ul > li.nav-drop {
+    padding-right: 16px;
+  }
+
+  header nav .nav-sections ul > li.nav-drop::after {
     content: '';
     display: inline-block;
     position: absolute;
-    top: 0.4em;
+    top: 50%;
     right: 2px;
-    transform: rotate(135deg);
+    transform: translateY(-50%) rotate(135deg);
     width: 5px;
     height: 5px;
     border: 1.5px solid currentcolor;
     border-radius: 0 1px 0 0;
     border-width: 1.5px 1.5px 0 0;
+    transition: none;
   }
 
   header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.4em;
-    transform: rotate(315deg);
+    transform: translateY(-50%) rotate(315deg);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
