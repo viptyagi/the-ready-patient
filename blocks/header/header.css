@@ -350,18 +350,20 @@ header nav .nav-sections ul > li > ul > li a:hover {
     display: inline-block;
     position: absolute;
     top: 50%;
-    right: 2px;
-    transform: translateY(-50%) rotate(135deg);
-    width: 5px;
-    height: 5px;
-    border: 1.5px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 1.5px 1.5px 0 0;
-    transition: none;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid currentcolor;
+    border-bottom: none;
+    border-radius: 0;
+    transform: translateY(-50%);
+    transition: transform 0.2s ease;
   }
 
   header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    transform: translateY(-50%) rotate(315deg);
+    transform: translateY(-50%) rotate(180deg);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li {
@@ -369,8 +371,8 @@ header nav .nav-sections ul > li > ul > li a:hover {
     position: relative;
     padding: 20px 8px;
     border-bottom: none;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
     color: #00344b;
     text-transform: none;
     letter-spacing: normal;
