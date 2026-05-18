@@ -196,17 +196,31 @@ header .nav-brand {
 }
 
 header nav .nav-brand a {
-  font-family: var(--heading-font-family);
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--brand-primary, #00344b);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: 0;
 }
 
-header nav .nav-brand img {
-  width: 180px;
+header nav .nav-brand img.logo-desktop {
+  display: none;
+  width: 200px;
   height: auto;
+}
+
+header nav .nav-brand img.logo-mobile {
+  display: block;
+  width: 140px;
+  height: auto;
+}
+
+@media (width >= 900px) {
+  header nav .nav-brand img.logo-desktop {
+    display: block;
+  }
+
+  header nav .nav-brand img.logo-mobile {
+    display: none;
+  }
 }
 
 /* sections */
