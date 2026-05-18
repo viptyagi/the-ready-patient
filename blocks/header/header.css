@@ -215,7 +215,7 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
+  font-weight: 600;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
 }
@@ -329,9 +329,10 @@ header nav .nav-sections ul > li > ul > li a:hover {
     position: relative;
     padding: 0;
     border-bottom: none;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -423,15 +424,15 @@ header nav .nav-tools .nav-search-btn svg {
 
   header nav .nav-tools .default-content-wrapper p {
     display: block;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    font-size: 12px;
+    text-transform: none;
+    letter-spacing: normal;
     white-space: nowrap;
   }
 
   header nav .nav-tools .default-content-wrapper p a {
     color: var(--brand-primary, #00344b);
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 
