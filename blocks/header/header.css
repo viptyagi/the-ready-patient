@@ -169,7 +169,7 @@ header .nav-brand {
 @media (width >= 900px) {
   header .nav-brand {
     text-align: left;
-    flex-basis: 220px;
+    flex-basis: 160px;
   }
 }
 
@@ -293,7 +293,7 @@ header nav .nav-sections ul > li > ul > li a:hover {
 
   header nav .nav-sections ul {
     display: flex;
-    gap: 16px;
+    gap: 12px;
     margin: 0;
     align-items: center;
   }
@@ -329,9 +329,9 @@ header nav .nav-sections ul > li > ul > li a:hover {
     position: relative;
     padding: 0;
     border-bottom: none;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -411,15 +411,22 @@ header nav .nav-tools .nav-search-btn svg {
 
 @media (width >= 900px) {
   header nav .nav-tools {
-    gap: 20px;
+    gap: 12px;
     flex-shrink: 0;
+  }
+
+  header nav .nav-tools .default-content-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
   }
 
   header nav .nav-tools .default-content-wrapper p {
     display: block;
-    font-size: 12px;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
   }
 
   header nav .nav-tools .default-content-wrapper p a {
