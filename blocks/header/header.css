@@ -197,11 +197,11 @@ header .nav-brand {
 
 header nav .nav-brand a {
   font-family: var(--heading-font-family);
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 800;
   color: var(--brand-primary, #00344b);
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
 }
 
 header nav .nav-brand img {
@@ -351,7 +351,7 @@ header nav .nav-sections ul > li > ul > li a:hover {
     position: relative;
     padding: 0;
     border-bottom: none;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: none;
     letter-spacing: normal;
