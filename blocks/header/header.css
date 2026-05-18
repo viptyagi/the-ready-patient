@@ -439,12 +439,37 @@ header nav .nav-tools .button-container {
   all: unset;
 }
 
+header nav .nav-search {
+  display: none;
+  align-items: center;
+  position: relative;
+}
+
+header nav .nav-search-input {
+  width: 0;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  color: var(--brand-primary, #00344b);
+  outline: none;
+  transition: width 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+}
+
+header nav .nav-search-expanded .nav-search-input {
+  width: 140px;
+  padding: 6px 0;
+  border-bottom-color: #ccc;
+}
+
 header nav .nav-search-btn {
   all: unset;
   cursor: pointer;
   padding: 4px;
   color: var(--brand-primary, #00344b);
-  display: none;
+  display: flex;
   align-items: center;
 }
 
@@ -455,7 +480,7 @@ header nav .nav-search-btn svg {
 }
 
 @media (width >= 900px) {
-  header nav .nav-search-btn {
+  header nav .nav-search {
     display: flex;
     padding: 12px 0 12px 8px;
   }

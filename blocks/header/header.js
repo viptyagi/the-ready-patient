@@ -151,18 +151,56 @@ export default async function decorate(block) {
       const bc = btn.closest('.button-container');
       if (bc) bc.className = '';
     });
-
   }
 
-  // add search button directly to nav (not inside tools) so it stays on main row
-  const searchBtn = document.createElement('button');
-  searchBtn.className = 'nav-search-btn';
-  searchBtn.setAttribute('aria-label', 'Search');
-  searchBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
-  searchBtn.addEventListener('click', () => {
-    window.location.href = '/search.html';
+  // add search with expandable input
+  const searchWrapper = document.createElement('div');
+  searchWrapper.className = 'nav-search';
+  searchWrapper.innerHTML = `<input type="text" class="nav-search-input" placeholder="Search" aria-label="Search">
+    <button class="nav-search-btn" aria-label="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>`;
+
+  const searchInput = searchWrapper.querySelector('.nav-search-input');
+  const searchButton = searchWrapper.querySelector('.nav-search-btn');
+
+  searchButton.addEventListener('click', () => {
+    if (searchWrapper.classList.contains('nav-search-expanded')) {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+      } else {
+        searchWrapper.classList.remove('nav-search-expanded');
+        searchInput.blur();
+      }
+    } else {
+      searchWrapper.classList.add('nav-search-expanded');
+      searchInput.focus();
+    }
   });
-  nav.append(searchBtn);
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+      }
+    }
+    if (e.key === 'Escape') {
+      searchWrapper.classList.remove('nav-search-expanded');
+      searchInput.blur();
+    }
+  });
+
+  searchInput.addEventListener('blur', () => {
+    setTimeout(() => {
+      if (!searchInput.value.trim()) {
+        searchWrapper.classList.remove('nav-search-expanded');
+      }
+    }, 200);
+  });
+
+  nav.append(searchWrapper);
 
   // hamburger for mobile - prepended so it's on the LEFT
   const hamburger = document.createElement('div');
