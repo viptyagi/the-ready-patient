@@ -378,6 +378,12 @@ header nav .nav-sections ul > li > ul > li a:hover {
     letter-spacing: normal;
   }
 
+  header nav .nav-sections .default-content-wrapper > ul > li > p {
+    font-size: 10px;
+    font-weight: 500;
+    margin: 0;
+  }
+
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
