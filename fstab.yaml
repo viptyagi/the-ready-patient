@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p92368-e968987.adobeaemcloud.com/bin/franklin.delivery/viptyagi/thereadypatient/main"
+    url: "https://author-p92368-e968987.adobeaemcloud.com/bin/franklin.delivery/viptyagi/the-ready-patient/main"
     type: "markup"
     suffix: ".html"
