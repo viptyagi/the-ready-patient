@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/the-ready-patient/:/",
-    "/content/the-ready-patient/configuration:/.helix/config.json",
-    "/content/the-ready-patient/metadata:/metadata.json"
+    "/content/thereadypatient/:/",
+    "/content/thereadypatient/configuration:/.helix/config.json",
+    "/content/thereadypatient/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/the-ready-patient/"
+    "/content/thereadypatient/"
   ]
 }
